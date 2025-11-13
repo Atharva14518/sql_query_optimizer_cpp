@@ -1,0 +1,11 @@
+12
+SELECT * FROM customer;
+SELECT * FROM customer WHERE cust_id = 1;
+SELECT c.firstname, c.lastname FROM customer c;
+SELECT * FROM customer c JOIN payment p ON c.cust_id = p.cust_id;
+SELECT COUNT(*) FROM customer;
+SELECT DISTINCT firstname FROM customer;
+SELECT * FROM customer ORDER BY firstname;
+SELECT * FROM customer LIMIT 2;
+SELECT c.firstname, p.amount FROM customer c JOIN payment p ON c.cust_id = p.cust_id WHERE c.cust_id = 1;
+SELECT * FROM customer WHERE firstname LIKE 'A%';

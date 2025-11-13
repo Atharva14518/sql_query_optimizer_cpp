@@ -1,0 +1,42 @@
+# Compiled executables
+sqlopt
+sqlopt_new
+sqlopt_fresh
+sqlopt_standalone
+sql_optimizer
+testing
+
+# Build directories
+build/
+.venv/
+
+# IDE files
+.vscode/
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
+input.txt
+
+# Database files
+*.db
+test.db
+
+# Object files
+*.o
+*.obj
+
+# Backup files
+*~
+*.bak
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Python cache (if any)
+__pycache__/
+*.pyc

@@ -1,0 +1,5 @@
+SELECT u.name, SUM(o.amount * 1.1) AS total FROM users u INNER JOIN orders o ON u.id = o.user_id WHERE u.age > 25 AND o.status IN ('shipped', 'delivered') AND (u.name LIKE 'A%' OR u.age < 30) GROUP BY u.name HAVING SUM(o.amount) > 100 ORDER BY total DESC LIMIT 5;
+SELECT p.name, COUNT(*) AS order_count FROM products p LEFT JOIN order_items oi ON p.id = oi.product_id INNER JOIN orders o ON oi.order_id = o.id WHERE p.price BETWEEN 10 AND 100 AND o.status = 'shipped' GROUP BY p.name ORDER BY order_count DESC;
+SELECT u.id, u.name FROM users u WHERE (u.age >= 18 AND u.age <= 65) OR (u.name NOT IN ('Alice', 'Bob') AND u.id % 2 = 0);
+SELECT * FROM orders WHERE amount + 10 > 50 AND amount * 0.9 < 100;
+SELECT DISTINCT u.name, p.name, o.amount + oi.quantity * p.price AS total_value FROM users u JOIN orders o ON u.id = o.user_id JOIN order_items oi ON o.id = oi.order_id JOIN products p ON oi.product_id = p.id WHERE u.age > 20 AND o.status = 'pending' AND p.price > 0 AND (oi.quantity > 1 OR p.name LIKE '%book%') ORDER BY total_value DESC LIMIT 10;
